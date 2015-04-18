@@ -1,0 +1,35 @@
+language: java
+
+jdk:
+   - oraclejdk7
+
+# cache: true
+archive: true
+
+before_install:
+  - export CIRCLE_COMPARE_URL=$COMPARE_URL
+  - export CURRENT_BRANCH=$HEAD_BRANCH
+  - export MERGE_BRANCH=$BASE_BRANCH
+  - export SHOULD_SKIP_SHIPPABLE=`[[ $CURRENT_BRANCH != 'master' && $CURRENT_BRANCH != "$MERGE_BRANCH" && $PULL_REQUEST = 'false' && $CURRENT_BRANCH != release/* ]] && echo 'true' || echo 'false'`
+  - echo "CIRCLE_COMPARE_URL=$CIRCLE_COMPARE_URL"
+  - echo "CURRENT_BRANCH=$CURRENT_BRANCH"
+  - echo "MERGE_BRANCH=$MERGE_BRANCH"
+  - echo "SHOULD_SKIP_SHIPPABLE=$SHOULD_SKIP_SHIPPABLE"
+
+install:
+  - >
+    [[ $SHOULD_SKIP_SHIPPABLE = 'true' ]] && echo "Skip installing dependencies" || ./setup_android_sdk.sh
+script:
+  - >
+    [[ $SHOULD_SKIP_SHIPPABLE = 'true' ]] && echo "export apk file" || ./gradlew clean assemble
+
+after_success:
+  - >
+    [[ $CURRENT_BRANCH = 'master' ]] && cp -vr app/build/outputs/apk shippable && ./send_apks.sh "DogFooding" || echo "Not a dogfood build"
+
+
+notifications:
+   email:
+       recipients:
+          - tam@mysquar.com
+          - tampv92@gmail.com
