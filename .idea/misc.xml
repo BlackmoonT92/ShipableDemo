@@ -6,9 +6,6 @@
   <component name="GroovyCompilerProjectConfiguration">
     <option name="heapSize" value="1024" />
   </component>
-  <component name="ProjectDictionaryState">
-    <dictionary name="MacPro" />
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
