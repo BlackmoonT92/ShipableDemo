@@ -16,6 +16,9 @@ before_install:
   - echo "MERGE_BRANCH=$MERGE_BRANCH"
   - echo "SHOULD_SKIP_SHIPPABLE=$SHOULD_SKIP_SHIPPABLE"
 
+install:
+  - >
+    [[ $SHOULD_SKIP_SHIPPABLE = 'true' ]] && echo "Skip installing dependencies" || ./setup_android_sdk.sh
 script:
   - >
     [[ $SHOULD_SKIP_SHIPPABLE = 'true' ]] && echo "export apk file" || ./gradlew clean assemble
