@@ -33,8 +33,6 @@ buildscript {
 allprojects {
   repositories {
     mavenLocal()
-//    maven { url 'http://mirrors.ibiblio.org/maven2/' }
-//    maven { url 'http://maven.antelink.com/content/repositories/central/' }
     maven { url 'https://raw.github.com/squar/mvn-repo/master/' }
     maven { url 'https://maven.fabric.io/public' }
     mavenCentral()
