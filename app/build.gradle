@@ -41,7 +41,7 @@ android {
       minifyEnabled true
       shrinkResources true
       zipAlignEnabled true
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.debug
       // Crashlytics distribution
       ext.betaDistributionReleaseNotes = "Shipable Demo"
