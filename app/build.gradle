@@ -41,8 +41,8 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       // Crashlytics distribution
       ext.betaDistributionReleaseNotes = releaseNotes()
-      ext.betaDistributionEmails="tam@mysquar.com, tampv92@gmail.com"
-      ext.betaDistributionGroupAliases="my-best-testers"
+      ext.betaDistributionEmails="tam@mysquar.com, phiung1992@gmail.com"
+      ext.betaDistributionGroupAliases="shipabledemo"
     }
   }
 }
