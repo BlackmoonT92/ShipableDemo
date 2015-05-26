@@ -44,7 +44,7 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       signingConfig signingConfigs.debug
       // Crashlytics distribution
-      ext.betaDistributionReleaseNotes = "Shipable Demo"
+      ext.betaDistributionReleaseNotes = releaseNotes()
       ext.betaDistributionEmails="tam@mysquar.com, phiung1992@gmail.com"
       ext.betaDistributionGroupAliases="shipabledemo"
     }
@@ -53,7 +53,7 @@ android {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       // Crashlytics distribution
-      ext.betaDistributionReleaseNotes = "Shipable Demo"
+      ext.betaDistributionReleaseNotes = releaseNotes()
       ext.betaDistributionEmails="tam@mysquar.com, phiung1992@gmail.com"
       ext.betaDistributionGroupAliases="shipabledemo"
     }
