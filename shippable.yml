@@ -25,7 +25,7 @@ script:
 
 after_success:
   - >
-    [[ $CURRENT_BRANCH = 'master' ]] && ./gradlew clean assemble crashlyticsUploadDistributionRelease || echo $CURRENT_BRANCH
+    [[ $CURRENT_BRANCH = 'master' ]] &&  ./gradlew clean assemble crashlyticsUploadDistributionDebug || echo $CURRENT_BRANCH
   - >
     [[ $CURRENT_BRANCH = 'master' ]] && cp -vr app/build/outputs/apk shippable && ./send_apks.sh "DogFooding" || echo "Not a dogfood build"
 
