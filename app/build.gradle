@@ -30,7 +30,7 @@ android {
     versionName "1.1"
   }
   signingConfigs {
-    release {
+    debug {
       storeFile file('../keystores/debug.keystore')
     }
 
@@ -40,7 +40,7 @@ android {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
       // Crashlytics distribution
-      ext.betaDistributionReleaseNotes = releaseNotes()
+      ext.betaDistributionReleaseNotes = "Shipable Demo"
       ext.betaDistributionEmails="tam@mysquar.com, phiung1992@gmail.com"
       ext.betaDistributionGroupAliases="shipabledemo"
     }
